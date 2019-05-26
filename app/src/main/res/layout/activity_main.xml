@@ -237,7 +237,6 @@
         android:layout_marginStart="130dp"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="6dp"
-        android:text="@string/data_agendada"
         android:textColor="#042BFF"
         app:fontFamily="casual"
         app:layout_constraintStart_toEndOf="@+id/textView12"
