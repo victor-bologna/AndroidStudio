@@ -25,14 +25,15 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import static com.example.helloworld.R.id.data;
 import static com.example.helloworld.R.id.datavis;
 
 public class CadastrarActivity extends AppCompatActivity {
 
     public static final String MainActivity = "com.example.helloworld.MainActivity";
-
     private static final String TAG = "CadastrarActivity";
 
+    private TextView errorText;
     private TextView mDisplayDate;
     private ImageButton mSetDate;
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
@@ -44,6 +45,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
         mDisplayDate = (TextView) findViewById(R.id.datavis);
         mSetDate = (ImageButton) findViewById(R.id.data);
+        errorText = (TextView) findViewById(R.id.errorText);
 
         mSetDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,29 +69,55 @@ public class CadastrarActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-
                 String date = dayOfMonth + "/" + month + "/" + year;
                 mDisplayDate.setText(date);
+                if(errorText.getText().length() > 0) {
+                    errorText.setText("");
+                }
             }
         };
 
-        //get the spinner from the xml.
         Spinner dropdown = findViewById(R.id.spinner);
-        //create a list of items for the spinner.
-        String[] items = new String[]{"Milena Suemi Uehara", "Felipe Wagner Caleme", "Everton", "Felipe Lugarinho", "Ninguem"};
-        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
-        //There are multiple variations of this, but this is the basic variant.
+        String[] items = new String[]{"Milena Suemi Uehara", "Felipe Wagner Caleme", "Everton Souza", "Felipe Lugarinho"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
     }
 
     public void sendMessage(View view) {
         Intent intent = new Intent();
         final TextView dataField = (TextView) findViewById(R.id.datavis);
-        String data = dataField.getText().toString();
-        intent.putExtra(MainActivity, data);
-        setResult(Activity.RESULT_OK,intent);
+
+        if(dataField.length()==0) {
+
+            errorText.setText("Sem nenhuma data preenchida.");
+        } else {
+            final Spinner spinnerField = (Spinner) findViewById(R.id.spinner);
+
+            if(spinnerField.getSelectedItemId() == 0) {
+                intent.putExtra("carro", "Chevrolet Corsa");
+                intent.putExtra("placa", "XPO-1234");
+            } else if(spinnerField.getSelectedItemId() == 1) {
+                intent.putExtra("carro", "VW Fusca");
+                intent.putExtra("placa", "ASV-3142");
+            } else if(spinnerField.getSelectedItemId() == 2) {
+                intent.putExtra("carro", "Ford Ka");
+                intent.putExtra("placa", "ABS-2341");
+            } else if(spinnerField.getSelectedItemId() == 3) {
+                intent.putExtra("carro", "Nissan March");
+                intent.putExtra("placa", "KTR-3652");
+            }
+
+            intent.putExtra("data", dataField.getText().toString());
+            intent.putExtra("motorista", spinnerField.getSelectedItem().toString());
+
+            setResult(Activity.RESULT_OK, intent);
+            finish();
+        }
+    }
+
+    public void cancel(View view) {
+        Intent intent = new Intent();
+        setResult(Activity.RESULT_CANCELED,intent);
         finish();
     }
 }

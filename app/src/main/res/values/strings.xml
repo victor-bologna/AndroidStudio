@@ -5,12 +5,9 @@
     <string name="sub_avatar">Estudante</string>
 
     <string name="viagem">Próxima viagem com: </string>
-    <string name="motorista">Felipe Wagner Caleme </string>
     <string name="data">Data: </string>
     <string name="carro">Carro: </string>
-    <string name="carro_motorista">VW Fusca</string>
     <string name="placa">Placa: </string>
-    <string name="placa_motorista">ASV-3142</string>
 
     <string name="ant_viagem">Viagem anterior: </string>
     <string name="ant_motorista">Milena Suemi Uehara</string>
@@ -19,6 +16,7 @@
     <string name="ant_placa">Placa: </string>
     <string name="ant_placa_motorista">XPO-1234</string>
 
+    <string name="new_schedule">Nova viagem</string>
     <string name="new_data">Data da próxima viagem</string>
     <string name="new_motorista">Motorista:</string>
 
