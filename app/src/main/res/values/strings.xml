@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">GoMates!</string>
+
+    <string name="avatar">Leisiele</string>
+    <string name="sub_avatar">Estudante</string>
+
+    <string name="viagem">Próxima viagem com: </string>
+    <string name="motorista">Felipe Wagner Caleme </string>
+    <string name="data">Data: </string>
+    <string name="data_agendada">30/04/2019</string>
+    <string name="carro">Carro: </string>
+    <string name="carro_motorista">VW Fusca</string>
+    <string name="placa">Placa: </string>
+    <string name="placa_motorista">ASV-3142</string>
+
+    <string name="ant_viagem">Viagem anterior: </string>
+    <string name="ant_motorista">Milena Suemi Uehara</string>
+    <string name="ant_carro">Carro: </string>
+    <string name="ant_carro_motorista">Chevrolet Corsa</string>
+    <string name="ant_placa">Placa: </string>
+    <string name="ant_placa_motorista">XPO-1234</string>
+
+    <string name="new_data">Data</string>
+    <string name="new_local_de">Local partida</string>
+
+</resources>
