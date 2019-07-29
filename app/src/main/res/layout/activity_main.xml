@@ -138,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar"
         android:layout_width="147dp"
         android:layout_height="123dp"
         android:layout_marginStart="136dp"
@@ -147,12 +147,10 @@
         android:layout_marginEnd="133dp"
         android:layout_marginRight="133dp"
         android:contentDescription="@string/avatar"
-        android:src="@drawable/essa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/essa" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -170,7 +168,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/avatar" />
 
     <TextView
         android:id="@+id/textView3"
