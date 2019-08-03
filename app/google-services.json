@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1044251278620",
+    "firebase_url": "https://gomates-fd247.firebaseio.com",
+    "project_id": "gomates-fd247",
+    "storage_bucket": "gomates-fd247.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044251278620:android:1b79a6cb886ada53",
+        "android_client_info": {
+          "package_name": "com.example.gomates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044251278620-i2qblt8p5a5obaiv606nba6li2vcomhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gomates",
+            "certificate_hash": "39d65f17a2051a7e79fca3b290f1f696aeff71c6"
+          }
+        },
+        {
+          "client_id": "1044251278620-ahhndq3t6r88pr3441jdkvg71801g3jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU-kET2eqkZpxTgV-3qFPzJVX_xsN_PL8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044251278620-ahhndq3t6r88pr3441jdkvg71801g3jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

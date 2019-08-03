@@ -20,8 +20,10 @@
     <string name="new_data">Data da próxima viagem</string>
     <string name="new_motorista">Motorista:</string>
 
-    <string name="usuário">Usuário</string>
+    <string name="accesso_conta">Acessar sua conta</string>
+    <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
 
 </resources>

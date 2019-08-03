@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.gomates;
 
 import org.junit.Test;
 

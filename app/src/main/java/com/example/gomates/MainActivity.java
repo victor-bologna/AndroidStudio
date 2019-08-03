@@ -1,48 +1,45 @@
-package com.example.helloworld;
+package com.example.gomates;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.Calendar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String Cadastrar = "com.example.helloworld.CadastrarActivity";
     private TextView dataField;
+    private TextView tipoUsuario; // Ainda  tem que fazer
+    private TextView usuario;
     private ImageView avatar;
     private static final int RESULT_LOAD_IMAGE = 1;
     private static final int RESULT_LOAD_CADASTRAR = 2;
     private int activityInfo;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        usuario = (TextView) findViewById(R.id.usuario);
+
+        if(user != null) {
+
+            if(user.getPhotoUrl() != null)
+                avatar.setImageURI(user.getPhotoUrl());
+            usuario.setText(user.getDisplayName());
+
+        }
 
         avatar = (ImageView) findViewById(R.id.avatar);
 
