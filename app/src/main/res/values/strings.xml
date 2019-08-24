@@ -25,5 +25,6 @@
     <string name="senha">Senha</string>
     <string name="login">Login</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="deslogar">Sair</string>
 
 </resources>
