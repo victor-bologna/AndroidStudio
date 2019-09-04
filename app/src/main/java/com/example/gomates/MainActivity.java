@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Log.d("Info", "User profile updated.");
+                        Toast.makeText(MainActivity.this, "Foto de perfil atualizada!", Toast.LENGTH_SHORT);
                     }
                 }
             });
