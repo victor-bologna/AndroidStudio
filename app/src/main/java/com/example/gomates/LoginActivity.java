@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 Toast.makeText(this,""+user.getEmail(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, JobActivity.class);
                 startActivity(intent);
 
             } else {

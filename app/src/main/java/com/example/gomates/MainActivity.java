@@ -2,7 +2,6 @@ package com.example.gomates;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 
@@ -16,24 +15,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gomates.enums.JobSelector;
+import com.example.gomates.globalvariables.GoMates;
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.squareup.picasso.Picasso;
-
-import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String Cadastrar = "com.example.helloworld.CadastrarActivity";
     private TextView dataField;
-    private TextView tipoUsuario; // Ainda  tem que fazer
+    private TextView tipoUsuario;
     private TextView usuario;
     private ImageView avatar;
     private static final int RESULT_LOAD_IMAGE = 1;
@@ -41,16 +38,19 @@ public class MainActivity extends AppCompatActivity {
     private int activityInfo;
     private FirebaseUser user;
     private Button signOut;
+    private GoMates goMates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        avatar = (ImageView) findViewById(R.id.avatar);
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        usuario = (TextView) findViewById(R.id.usuario);
-        signOut = (Button) findViewById(R.id.singout);
+        goMates     = ((GoMates)getApplicationContext());
+        user        = FirebaseAuth.getInstance().getCurrentUser();
+        avatar      = (ImageView)   findViewById(R.id.avatar);
+        usuario     = (TextView)    findViewById(R.id.usuario);
+        tipoUsuario = (TextView)    findViewById(R.id.tipoUsuario);
+        signOut     = (Button)      findViewById(R.id.singout);
         final Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 activityInfo = RESULT_LOAD_IMAGE;
             }
         });
+
+        if(goMates.getJobSelected() == JobSelector.Carona){
+            tipoUsuario.setText("Carona");
+        } else if(goMates.getJobSelected() == JobSelector.Motorista) {
+            tipoUsuario.setText("Motorista");
+        }
     }
 
     private void getPicture(FirebaseUser user) {

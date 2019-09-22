@@ -15,6 +15,8 @@
     <string name="ant_carro_motorista">Chevrolet Corsa</string>
     <string name="ant_placa">Placa: </string>
     <string name="ant_placa_motorista">XPO-1234</string>
+    <string name="cancelar_viagem">Cancelar Viagem</string>
+    <string name="nova_viagem">Nova Viagem</string>
 
     <string name="new_schedule">Nova viagem</string>
     <string name="new_data">Data da próxima viagem</string>
@@ -26,5 +28,25 @@
     <string name="login">Login</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="deslogar">Sair</string>
+
+    <string name="job_selector">Motorista ou carona?</string>
+    <string name="job_motorista">Motorista</string>
+    <string name="job_carona">Carona</string>
+    <string name="title_activity_configuracoes">Configuracoes</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>
