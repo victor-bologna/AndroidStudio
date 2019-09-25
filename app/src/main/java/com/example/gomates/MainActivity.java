@@ -45,12 +45,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        goMates     = ((GoMates)getApplicationContext());
+        goMates     = GoMates.getInstance();
         user        = FirebaseAuth.getInstance().getCurrentUser();
         avatar      = (ImageView)   findViewById(R.id.avatar);
         usuario     = (TextView)    findViewById(R.id.usuario);
         tipoUsuario = (TextView)    findViewById(R.id.tipoUsuario);
         signOut     = (Button)      findViewById(R.id.singout);
+        avatar      = (ImageView)   findViewById(R.id.avatar);
         final Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,8 +84,6 @@ public class MainActivity extends AppCompatActivity {
             usuario.setText(user.getDisplayName());
 
         }
-
-        avatar = (ImageView) findViewById(R.id.avatar);
 
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override

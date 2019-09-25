@@ -18,7 +18,7 @@ public class JobActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job);
 
-        goMates = ((GoMates)getApplicationContext());
+        goMates = GoMates.getInstance();
     }
 
     public void funcMotorista(View view) {
